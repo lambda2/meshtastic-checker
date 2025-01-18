@@ -5,7 +5,7 @@ import { create } from "zustand";
 
 import { Protobuf, Types } from "@meshtastic/js";
 
-export type Page = "messages" | "map" | "config" | "channels" | "nodes";
+export type Page = "messages" | "map" | "config" | "channels" | "nodes" | "presets";
 
 export interface MessageWithState extends Types.PacketMetadata<string> {
   state: MessageState;

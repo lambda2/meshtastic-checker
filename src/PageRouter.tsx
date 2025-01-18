@@ -4,6 +4,7 @@ import { ConfigPage } from "@pages/Config/index.tsx";
 import { MapPage } from "@pages/Map.tsx";
 import { MessagesPage } from "@pages/Messages.tsx";
 import { NodesPage } from "@pages/Nodes.tsx";
+import { PresetsPage } from "./pages/Presets";
 
 export const PageRouter = (): JSX.Element => {
   const { activePage } = useDevice();
@@ -14,6 +15,7 @@ export const PageRouter = (): JSX.Element => {
       {activePage === "config" && <ConfigPage />}
       {activePage === "channels" && <ChannelsPage />}
       {activePage === "nodes" && <NodesPage />}
+      {activePage === "presets" && <PresetsPage />}
     </>
   );
 };

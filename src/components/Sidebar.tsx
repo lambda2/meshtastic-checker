@@ -8,6 +8,7 @@ import {
   CpuIcon,
   EditIcon,
   LayersIcon,
+  LayoutTemplateIcon,
   type LucideIcon,
   MapIcon,
   MessageSquareIcon,
@@ -58,6 +59,11 @@ export const Sidebar = ({ children }: SidebarProps): JSX.Element => {
       icon: UsersIcon,
       page: "nodes",
     },
+    {
+      name: "Presets",
+      icon: LayoutTemplateIcon,
+      page: "presets",
+    },
   ];
 
   return (
@@ -69,13 +75,13 @@ export const Sidebar = ({ children }: SidebarProps): JSX.Element => {
           </span>
           <Subtle>{myNode?.user?.longName ?? "UNK"}</Subtle>
         </div>
-        <button
+        {/* <button
           type="button"
           className="transition-all hover:text-accent"
           onClick={() => setDialogOpen("deviceName", true)}
         >
           <EditIcon size={16} />
-        </button>
+        </button> */}
       </div>
       <div className="px-8 pb-6">
         <div className="flex items-center">
