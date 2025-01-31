@@ -27,4 +27,7 @@ export default defineConfig({
   html: {
     title: "Meshtastic Web",
   },
+  output: {
+    assetPrefix: '/meshtastic-checker/',
+  }
 });

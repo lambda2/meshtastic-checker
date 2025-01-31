@@ -1,8 +1,8 @@
 {
-  "name": "Meshtastic",
-  "short_name": "Meshtastic",
+  "name": "Meshtastic checker",
+  "short_name": "Meshtastic checker",
   "start_url": ".",
-  "description": "Meshtastic web app",
+  "description": "Meshtastic checker",
   "icons": [
     {
       "src": "/icon.svg",
