@@ -29,7 +29,7 @@ export const Serial = ({ closeDialog }: TabElementProps): JSX.Element => {
 
   const onConnect = async (port: SerialPort) => {
     const id = randId();
-    const device = addDevice(id);
+    const device = addDevice(id, port);
     setSelectedDevice(id);
     const connection = new SerialConnection(id);
     await connection

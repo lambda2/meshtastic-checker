@@ -5,7 +5,13 @@ import { create } from "zustand";
 
 import { Protobuf, Types } from "@meshtastic/js";
 
-export type Page = "messages" | "map" | "config" | "channels" | "nodes" | "presets";
+export type Page =
+  | "messages"
+  | "map"
+  | "config"
+  | "channels"
+  | "nodes"
+  | "presets";
 
 export interface MessageWithState extends Types.PacketMetadata<string> {
   state: MessageState;
@@ -29,6 +35,7 @@ export type DialogVariant =
 
 export interface Device {
   id: number;
+  port?: SerialPort;
   status: Types.DeviceStatusEnum;
   channels: Map<Types.ChannelNumber, Protobuf.Channel.Channel>;
   config: Protobuf.LocalOnly.LocalConfig;
@@ -101,7 +108,7 @@ export interface DeviceState {
   devices: Map<number, Device>;
   remoteDevices: Map<number, undefined>;
 
-  addDevice: (id: number) => Device;
+  addDevice: (id: number, port?: SerialPort) => Device;
   removeDevice: (id: number) => void;
   getDevices: () => Device[];
   getDevice: (id: number) => Device | undefined;
@@ -111,11 +118,12 @@ export const useDeviceStore = create<DeviceState>((set, get) => ({
   devices: new Map(),
   remoteDevices: new Map(),
 
-  addDevice: (id: number) => {
+  addDevice: (id: number, port?: SerialPort) => {
     set(
       produce<DeviceState>((draft) => {
         draft.devices.set(id, {
           id,
+          port,
           status: Types.DeviceStatusEnum.DeviceDisconnected,
           channels: new Map(),
           config: new Protobuf.LocalOnly.LocalConfig(),
@@ -131,7 +139,7 @@ export const useDeviceStore = create<DeviceState>((set, get) => ({
           },
           traceroutes: new Map(),
           connection: undefined,
-          activePage: "messages",
+          activePage: "presets",
           activeNode: 0,
           waypoints: [],
           // currentMetrics: new Protobuf.DeviceMetrics(),

@@ -13,20 +13,15 @@ const Footer = React.forwardRef<HTMLElement, FooterProps>(
         }}
       >
         <p>
+          Meshtastic Configurator | forked from{" "}
           <a
-            href="https://vercel.com/?utm_source=meshtastic&utm_campaign=oss"
+            href="https://client.meshtastic.org/"
             className="hover:underline"
+            target="_blank"
             style={{ color: "var(--link)" }}
+            rel="noreferrer"
           >
-            Powered by ▲ Vercel
-          </a>{" "}
-          | Meshtastic® is a registered trademark of Meshtastic LLC. |{" "}
-          <a
-            href="https://meshtastic.org/docs/legal"
-            className="hover:underline"
-            style={{ color: "var(--link)" }}
-          >
-            Legal Information
+            Meshtastic web client
           </a>
         </p>
       </footer>

@@ -23,13 +23,6 @@ export const Dashboard = () => {
   return (
     <>
       <div className="flex flex-col gap-3 p-3">
-        <div className="flex items-center justify-between">
-          <div className="space-y-1">
-            <H3>Connected Devices</H3>
-            <Subtle>Manage, connect and disconnect devices</Subtle>
-          </div>
-        </div>
-
         <Separator />
 
         <div className="flex h-[450px] rounded-md border border-dashed border-slate-200 p-3 dark:border-slate-700">
@@ -83,14 +76,15 @@ export const Dashboard = () => {
           ) : (
             <div className="m-auto flex flex-col gap-3 text-center">
               <ListPlusIcon size={48} className="mx-auto text-textSecondary" />
-              <H3>No Devices</H3>
-              <Subtle>Connect at least one device to get started</Subtle>
+              <H3>Validateur de configuration Meshtastic</H3>
+              <Subtle>Sur la configuration Gaulix 868MHz</Subtle>
+              <Subtle>Connectez un appareil Meshtastic pour commencer</Subtle>
               <Button
                 className="gap-2"
                 onClick={() => setConnectDialogOpen(true)}
               >
                 <PlusIcon size={16} />
-                New Connection
+                Nouvelle Connexion
               </Button>
             </div>
           )}

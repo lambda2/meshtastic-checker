@@ -3,7 +3,7 @@ import { AlignLeftIcon, type LucideIcon } from "lucide-react";
 import Footer from "./UI/Footer";
 
 export interface PageLayoutProps {
-  label: string;
+  label: string | React.ReactElement;
   noPadding?: boolean;
   children: React.ReactNode;
   actions?: {
@@ -49,12 +49,11 @@ export const PageLayout = ({
         </div>
         <div
           className={cn(
-            "flex h-full w-full flex-col overflow-y-auto",
+            "flex h-full bg-gray-50 w-full flex-col overflow-y-auto",
             !noPadding && "pl-3 pr-3 ",
           )}
         >
           {children}
-          <Footer />
         </div>
       </div>
     </>

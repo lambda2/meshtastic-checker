@@ -65,7 +65,7 @@ export const NewDeviceDialog = ({
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Connect New Device</DialogTitle>
+          <DialogTitle>Nouvelle Connexion</DialogTitle>
         </DialogHeader>
         <Tabs defaultValue="HTTP">
           <TabsList>

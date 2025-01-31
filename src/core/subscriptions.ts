@@ -42,6 +42,7 @@ export const subscribeAll = (
 
   connection.events.onDeviceStatus.subscribe((status) => {
     device.setStatus(status);
+    console.log("Status change: ", status);
   });
 
   connection.events.onWaypointPacket.subscribe((waypoint) => {
